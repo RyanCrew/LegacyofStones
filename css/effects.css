@@ -1,0 +1,304 @@
+/* ===== EFECTOS VISUALES Y ANIMACIONES ===== */
+
+/* Efecto de partículas flotantes en el fondo */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+.particle:nth-child(2n) {
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+.particle:nth-child(3n) {
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de brillo en elementos interactivos */
+.glow-on-hover {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent-gold), var(--accent-red), var(--accent-gold));
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.glow-on-hover:hover::before {
+    opacity: 0.3;
+}
+
+/* Efecto de texto typewriter */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--accent-gold);
+    white-space: nowrap;
+    animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent-gold); }
+}
+
+/* Efecto de shimmer en botones */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.shimmer:hover::before {
+    left: 100%;
+}
+
+/* Efecto de glassmorphism para tarjetas */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de parallax sutil */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Animación de entrada para elementos */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto de hover 3D */
+.hover-3d {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Indicador de carga moderno */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    border-top: 3px solid var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Efecto de texto con gradiente animado */
+.animated-gradient-text {
+    background: linear-gradient(45deg, var(--accent-gold), var(--accent-red), var(--accent-gold));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Efecto de borde animado */
+.animated-border {
+    position: relative;
+    background: var(--secondary-dark);
+    border-radius: var(--border-radius);
+    padding: 2px;
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--accent-gold), var(--accent-red), var(--accent-gold));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
+
+/* Efecto de hover para tarjetas */
+.card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Tooltip moderno */
+.tooltip-modern {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-modern .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background: rgba(26, 26, 26, 0.95);
+    color: var(--text-light);
+    text-align: center;
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+}
+
+.tooltip-modern .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(26, 26, 26, 0.95) transparent transparent transparent;
+}
+
+.tooltip-modern:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Efecto de foco para accesibilidad */
+.focus-visible:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+/* Animación de pulso para elementos importantes */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}

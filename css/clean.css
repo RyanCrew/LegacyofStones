@@ -1,0 +1,612 @@
+/* ============================================================
+   LEGACY OF STONES - CLEAN MODERN DESIGN 2026
+   Diseño limpio, profesional y organizado
+   ============================================================ */
+
+:root {
+    --primary-dark: #0f0f0f;
+    --secondary-dark: #1a1a1a;
+    --accent-red: #8b0000;
+    --accent-gold: #d4af37;
+    --text-light: #ffffff;
+    --text-muted: #aaaaaa;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0a0a0a 100%);
+    background-attachment: fixed;
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* ===== CABECERA LIMPIA ===== */
+.main-hd {
+    background: linear-gradient(180deg, var(--secondary-dark) 0%, var(--primary-dark) 100%);
+    border-bottom: 2px solid var(--accent-red);
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-hd .page-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-hd h1 {
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.main-hd h1 a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.main-hd h1 a:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-subtitle {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== NAVEGACIÓN PRINCIPAL ===== */
+#menu-header-nav {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+
+.cms2-u.menu-item {
+    margin: 0;
+    position: relative;
+}
+
+.cms2-u.menu-item a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cms2-u.menu-item a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+    transition: width 0.3s ease;
+}
+
+.cms2-u.menu-item a:hover {
+    color: var(--accent-gold);
+}
+
+.cms2-u.menu-item a:hover::before {
+    width: 100%;
+}
+
+/* Submenú */
+.sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--secondary-dark);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.cms2-u.menu-item:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sub-menu .menu-item a {
+    padding: 12px 20px;
+    font-size: 12px;
+    border-bottom: none;
+}
+
+.sub-menu .menu-item a:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.page-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.article {
+    padding: 40px 0;
+}
+
+.mt2cms2-c {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Contenido principal */
+.mt2cms2-c-l {
+    background: rgba(20, 20, 20, 0.98);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-red);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.mt2cms2-c-l:hover {
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.1);
+    border-color: var(--border-color);
+}
+
+.page-hd {
+    margin: -40px -40px 30px -40px;
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(180deg, rgba(139, 0, 0, 0.1), transparent);
+}
+
+.page-hd h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+/* ===== PANEL LATERAL ===== */
+.mt2cms2-c-s {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mt2cms2-c-s .bd-c {
+    background: rgba(26, 26, 26, 0.98);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.mt2cms2-c-s .bd-c h4 {
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--accent-red);
+    padding-bottom: 10px;
+}
+
+/* ===== WIDGETS ===== */
+.widget-container {
+    margin: 20px 0;
+}
+
+.widget-container .widget .bd h4 {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    margin: 15px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.widget-container .widget .bd p {
+    color: var(--text-muted);
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.widget-container .widget .bd a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.widget-container .widget .bd a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+/* Ensure sidebar widgets (including user panel) have dark backgrounds and readable text */
+.widget .bd,
+.bd-c .bd {
+    background: rgba(26, 26, 26, 0.98);
+    color: var(--text-light);
+}
+
+/* Override list-group items inside widgets (user panel links) */
+.widget .bd .list-group-item {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    margin: 2px 0;
+}
+.widget .bd .list-group-item:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Override Bootstrap jumbotron (used in administration and characters pages) */
+.jumbotron {
+    background: rgba(26, 26, 26, 0.98);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.jumbotron h2 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    color: var(--text-muted);
+    margin: 10px 0;
+}
+
+.jumbotron hr {
+    border-color: var(--border-color);
+}
+
+.jumbotron .btn {
+    margin: 5px 0;
+}
+
+/* Override table backgrounds inside jumbotron */
+.jumbotron .table,
+.jumbotron > div[style*="white"] {
+    background: rgba(15, 15, 15, 0.9);
+}
+
+.jumbotron .table thead th {
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-gold));
+    color: var(--text-light);
+    border-color: var(--border-color);
+}
+
+.jumbotron .table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.jumbotron .table tbody tr td,
+.jumbotron .table tbody tr th {
+    color: var(--text-muted);
+}
+
+.jumbotron .table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+/* Remove red color from strong text in ranking table */
+.widget .bd .table strong,
+.jumbotron .table strong {
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+/* ===== TABLAS ===== */
+.standard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.standard-table thead th {
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-gold));
+    color: var(--text-light);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.standard-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.standard-table tbody tr:nth-child(even) {
+    background: rgba(26, 26, 26, 0.8);
+}
+
+.standard-table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.standard-table tbody td {
+    padding: 12px 15px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ===== FORMULARIOS ===== */
+.form-control {
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-light);
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    outline: none;
+}
+
+/* ===== BOTONES ===== */
+.btn, button, input[type="submit"] {
+    background: linear-gradient(135deg, var(--accent-red), #a00000);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    padding: 11px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover {
+    background: linear-gradient(135deg, #a00000, var(--accent-red));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-red), #a00000);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--accent-gold), #ffc107);
+    color: var(--primary-dark);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #ff6b7c);
+}
+
+/* ===== ALERTAS ===== */
+.alert {
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.15);
+    border-left-color: #28a745;
+    color: #d4edda;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.15);
+    border-left-color: #dc3545;
+    color: #f8d7da;
+}
+
+.alert-info {
+    background: rgba(23, 162, 184, 0.15);
+    border-left-color: #17a2b8;
+    color: #d1ecf1;
+}
+
+/* ===== FOOTER ===== */
+.mt2cms2-footer {
+    background: linear-gradient(180deg, var(--secondary-dark), var(--primary-dark));
+    border-top: 2px solid var(--accent-red);
+    margin-top: 60px;
+    padding: 40px 20px 20px;
+}
+
+.footer-nav .page-width {
+    text-align: center;
+}
+
+.footer a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--text-light);
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .main-hd .page-width {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #menu-header-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .cms2-u.menu-item a {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .mt2cms2-c {
+        grid-template-columns: 1fr;
+    }
+
+    .mt2cms2-c-l {
+        padding: 25px;
+    }
+
+    .page-hd {
+        margin: -25px -25px 20px -25px;
+        padding: 20px 25px;
+    }
+
+    .page-hd h2 {
+        font-size: 1.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .standard-table {
+        font-size: 13px;
+    }
+
+    .standard-table th,
+    .standard-table td {
+        padding: 10px;
+    }
+}
+
+/* ===== ESTILOS GÉNÉRALES ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-light);
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+}
+
+p, li, span, td {
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-light);
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.article .mt2cms2-c-l {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== UTILIDADES ===== */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Ocultar elementos por defecto */
+.hide-txt {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+    overflow: visible;
+    font-size: 1.8rem;
+}

@@ -1,0 +1,115 @@
+/* ============================================================
+   NUEVO ESTILO PROFESIONAL: LEGACY OF STONES (DARK MODE)
+   ============================================================ */
+
+/* 1. FONDO GENERAL Y TEXTOS */
+body {
+    background: #050505 !important; /* Negro profundo */
+    color: #bbb !important;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. CABECERA Y LOGO (Ajuste para tu nuevo logo HD) */
+.main-hd .page-width {
+    min-height: 380px; /* Aumentamos el espacio para el logo profesional */
+}
+
+.main-hd h1 {
+    width: 450px; /* Ajuste de ancho para el nuevo diseño */
+    height: 300px;
+    background-size: contain !important;
+    top: 20px;
+}
+
+/* 3. CONTENEDOR PRINCIPAL (Noticias) */
+.article .mt2cms2-c-l {
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid #222;
+    border-top: 3px solid #8b0000; /* Detalle rojo Metin2 */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+    border-radius: 4px;
+    padding: 25px !important;
+}
+
+/* 4. PANEL LATERAL (User Panel / Ranking) */
+.article .mt2cms2-c-s .bd-c {
+    background: #111 !important;
+    border: 1px solid #333;
+    border-left: 2px solid #d4af37; /* Borde dorado como el logo */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    color: #eee;
+}
+
+/* 5. TITULOS DE WIDGETS */
+.widget-container .widget .bd h4 {
+    color: #d4af37 !important; /* Dorado */
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+/* 6. ENLACES Y NAVEGACIÓN */
+a {
+    color: #d4af37; /* Dorado por defecto */
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.main-hd .main a {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Limpieza de fondos blancos antiguos */
+.standard-table tbody th, 
+.standard-table thead td,
+.standard-table tbody tr:nth-child(2n) td {
+    background-color: #1a1a1a !important;
+    color: #ccc;
+    border-color: #333;
+}
+
+/* --- ARREGLO DE VISIBILIDAD PARA FONDO OSCURO --- */
+
+/* Forzar que los títulos de noticias sean blancos/claros */
+h2, h3, h4, h5, .eason {
+    color: #ffffff !important;
+}
+
+/* Arreglar los enlaces que se ven negros o rojos oscuros */
+a, h3 a {
+    color: #d4af37 !important; /* Dorado para que resalte */
+}
+
+/* Arreglar el texto de los párrafos y listas */
+p, li, span, td, th {
+    color: #cecece !important;
+}
+
+/* Quitar los bordes blancos antiguos que ensucian el diseño */
+.widget .bd, 
+.standard-table td, 
+.standard-table th, 
+.article .mt2cms2-c-l, 
+.article .mt2cms2-c-s .bd-c {
+    border: 1px solid #333 !important; /* Borde oscuro sutil */
+    background: rgba(20, 20, 20, 0.9) !important; /* Fondo gris casi negro */
+}
+
+/* Especial para el Ranking: Forzar visibilidad de nombres */
+.standard-table tr:nth-child(2n) td {
+    background-color: #1a1a1a !important; /* Filas alternas oscuras */
+}
+
+/* El título de las noticias que se ve muy grande y oscuro */
+.article .mt2cms2-c-l h3 {
+    border-bottom: 1px solid #8b0000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}

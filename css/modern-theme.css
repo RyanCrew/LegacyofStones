@@ -1,0 +1,490 @@
+/* ============================================================
+   MODERN THEME: LEGACY OF STONES - 2026 EDITION
+   ============================================================
+   Diseño moderno y profesional para Metin2CMS
+   Manteniendo compatibilidad con funcionalidades existentes
+   ============================================================ */
+
+/* ===== 1. RESET Y VARIABLES GLOBALES ===== */
+:root {
+    /* Paleta de colores moderna */
+    --primary-dark: #0a0a0a;
+    --secondary-dark: #1a1a1a;
+    --accent-red: #8b0000;
+    --accent-gold: #d4af37;
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
+    --text-dark: #888888;
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.8);
+    --glow-color: rgba(212, 175, 55, 0.3);
+
+    /* Espaciado moderno */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Bordes y radios */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --border-width: 1px;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px var(--shadow-color);
+    --shadow-md: 0 4px 8px var(--shadow-color);
+    --shadow-lg: 0 8px 16px var(--shadow-color);
+    --shadow-glow: 0 0 20px var(--glow-color);
+}
+
+/* ===== 2. FONDO GENERAL Y TIPOGRAFÍA ===== */
+body {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0f0f0f 50%, var(--primary-dark) 100%) !important;
+    background-attachment: fixed !important;
+    color: var(--text-light) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    line-height: 1.6 !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+}
+
+/* Tipografía mejorada */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-light) !important;
+    margin-bottom: var(--spacing-md) !important;
+}
+
+h1 { font-size: 2.5rem !important; }
+h2 { font-size: 2rem !important; }
+h3 { font-size: 1.5rem !important; }
+h4 { font-size: 1.25rem !important; }
+
+p, li, span, td, th {
+    color: var(--text-muted) !important;
+    line-height: 1.7 !important;
+}
+
+/* ===== 3. CABECERA MODERNA ===== */
+.main-hd {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)) !important;
+    border-bottom: var(--border-width) solid var(--accent-red) !important;
+    box-shadow: var(--shadow-lg) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.main-hd::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(212,175,55,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(212,175,55,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(139,0,0,0.05)"/><circle cx="10" cy="50" r="0.5" fill="rgba(139,0,0,0.05)"/><circle cx="90" cy="30" r="0.5" fill="rgba(139,0,0,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.main-hd .page-width {
+    position: relative !important;
+    z-index: 2 !important;
+    padding: var(--spacing-xl) var(--spacing-lg) !important;
+}
+
+.main-hd h1 {
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+.main-hd h1 a {
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)) !important;
+}
+
+.main-hd h1 a:hover {
+    transform: scale(1.05) !important;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)) !important;
+}
+
+/* ===== 4. MENÚ DE NAVEGACIÓN ===== */
+#menu-header-nav {
+    background: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: var(--border-radius-lg) !important;
+    margin-top: var(--spacing-lg) !important;
+    padding: var(--spacing-md) !important;
+    box-shadow: var(--shadow-md) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+}
+
+.cms2-g.main.eason {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--spacing-sm) !important;
+}
+
+.cms2-u.menu-item {
+    margin: 0 !important;
+}
+
+.cms2-u.menu-item a {
+    display: inline-block !important;
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    border-radius: var(--border-radius) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.cms2-u.menu-item a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
+    transition: left 0.5s ease;
+}
+
+.cms2-u.menu-item a:hover {
+    color: var(--accent-gold) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+.cms2-u.menu-item a:hover::before {
+    left: 100%;
+}
+
+/* ===== 5. CONTENEDOR PRINCIPAL ===== */
+.article {
+    padding: var(--spacing-xl) 0 !important;
+}
+
+.article .mt2cms2-c-l {
+    background: rgba(15, 15, 15, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    border-top: 3px solid var(--accent-red) !important;
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-lg) !important;
+    padding: var(--spacing-xl) !important;
+    margin-bottom: var(--spacing-xl) !important;
+    transition: all 0.3s ease !important;
+}
+
+.article .mt2cms2-c-l:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-lg) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+/* ===== 6. PANEL LATERAL ===== */
+.article .mt2cms2-c-s .bd-c {
+    background: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    border-left: 3px solid var(--accent-gold) !important;
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-md) !important;
+    padding: var(--spacing-lg) !important;
+    transition: all 0.3s ease !important;
+}
+
+.article .mt2cms2-c-s .bd-c:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-md) !important;
+    border-left-color: var(--accent-red) !important;
+}
+
+/* ===== 7. WIDGETS Y COMPONENTES ===== */
+.widget-container .widget .bd h4 {
+    color: var(--accent-gold) !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    border-bottom: var(--border-width) solid var(--accent-red) !important;
+    padding-bottom: var(--spacing-sm) !important;
+    margin-bottom: var(--spacing-md) !important;
+    position: relative !important;
+}
+
+.widget-container .widget .bd h4::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+}
+
+/* ===== 8. TABLAS MODERNAS ===== */
+.standard-table {
+    background: rgba(20, 20, 20, 0.95) !important;
+    border-radius: var(--border-radius) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.standard-table thead th {
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-gold)) !important;
+    color: var(--text-light) !important;
+    font-weight: 600 !important;
+    padding: var(--spacing-md) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 12px !important;
+}
+
+.standard-table tbody tr {
+    transition: all 0.2s ease !important;
+}
+
+.standard-table tbody tr:nth-child(even) {
+    background: rgba(26, 26, 26, 0.8) !important;
+}
+
+.standard-table tbody tr:nth-child(odd) {
+    background: rgba(15, 15, 15, 0.8) !important;
+}
+
+.standard-table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.1) !important;
+    transform: scale(1.01) !important;
+}
+
+.standard-table tbody td {
+    padding: var(--spacing-md) !important;
+    border-bottom: var(--border-width) solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+}
+
+/* ===== 9. BOTONES MODERNOS ===== */
+.btn, .btn-primary, .btn-success, .btn-warning, .btn-danger {
+    border-radius: var(--border-radius) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-red), #a00000) !important;
+    color: var(--text-light) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #a00000, var(--accent-red)) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-glow), var(--shadow-sm) !important;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: var(--text-light) !important;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--accent-gold), #ffc107) !important;
+    color: var(--primary-dark) !important;
+}
+
+/* ===== 10. FORMULARIOS ===== */
+.form-control {
+    background: rgba(26, 26, 26, 0.9) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    color: var(--text-light) !important;
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25) !important;
+    background: rgba(15, 15, 15, 0.9) !important;
+}
+
+/* ===== 11. ALERTAS MODERNAS ===== */
+.alert {
+    border-radius: var(--border-radius) !important;
+    border: none !important;
+    padding: var(--spacing-md) !important;
+    margin-bottom: var(--spacing-md) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(32, 201, 151, 0.2)) !important;
+    border-left: 4px solid #28a745 !important;
+    color: #d4edda !important;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.2), rgba(255, 193, 7, 0.2)) !important;
+    border-left: 4px solid #dc3545 !important;
+    color: #f8d7da !important;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.2), rgba(0, 123, 255, 0.2)) !important;
+    border-left: 4px solid #17a2b8 !important;
+    color: #d1ecf1 !important;
+}
+
+/* ===== 12. FOOTER ===== */
+.mt2cms2-footer {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)) !important;
+    border-top: var(--border-width) solid var(--accent-red) !important;
+    padding: var(--spacing-xl) 0 !important;
+    margin-top: var(--spacing-2xl) !important;
+}
+
+.footer-nav .page-width {
+    text-align: center !important;
+}
+
+.footer a {
+    color: var(--accent-gold) !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.footer a:hover {
+    color: var(--text-light) !important;
+    text-shadow: var(--shadow-glow) !important;
+}
+
+/* ===== 13. RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .main-hd .page-width {
+        padding: var(--spacing-lg) var(--spacing-md) !important;
+    }
+
+    .main-hd h1 {
+        font-size: 2rem !important;
+    }
+
+    #menu-header-nav {
+        padding: var(--spacing-sm) !important;
+    }
+
+    .cms2-g.main.eason {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .cms2-u.menu-item a {
+        width: 100% !important;
+        text-align: center !important;
+        margin-bottom: var(--spacing-xs) !important;
+    }
+
+    .article .mt2cms2-c-l,
+    .article .mt2cms2-c-s .bd-c {
+        margin: 0 var(--spacing-md) var(--spacing-lg) !important;
+        padding: var(--spacing-lg) !important;
+    }
+
+    .standard-table {
+        font-size: 12px !important;
+    }
+
+    .standard-table thead th,
+    .standard-table tbody td {
+        padding: var(--spacing-sm) !important;
+    }
+}
+
+/* ===== 14. ANIMACIONES Y EFECTOS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.article .mt2cms2-c-l,
+.article .mt2cms2-c-s .bd-c {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.btn:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* ===== 15. UTILIDADES ===== */
+.text-gold { color: var(--accent-gold) !important; }
+.text-red { color: var(--accent-red) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.bg-dark { background: var(--secondary-dark) !important; }
+.shadow-glow { box-shadow: var(--shadow-glow) !important; }
+
+/* ===== 16. SCROLLBAR MODERNO ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-red);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+}
+
+/* ===== 17. LOADING STATES ===== */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
