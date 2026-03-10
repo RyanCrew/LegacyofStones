@@ -1,0 +1,15 @@
+{
+   "settings":{
+      "default":"es"
+   },
+   "languages":{
+      "en":"English",
+      "es":"Espa\u00F1ol",
+      "fr":"Français",
+      "de":"Deutsch",
+      "it":"Italiano",
+      "pt":"Português",
+      "tr":"Türkçe",
+      "pl":"Polski"
+   }
+}
